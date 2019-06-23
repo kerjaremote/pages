@@ -1,0 +1,18 @@
+os: osx
+
+install:
+  - brew install hugo
+
+script:
+  - hugo
+
+deploy:
+  local_dir: public
+  repo: kerjaremote/kerjaremote.github.io
+  target_branch: master
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  keep_history: true
+  on:
+    branch: master
